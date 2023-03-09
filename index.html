@@ -2,388 +2,310 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Holiday</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking Web App</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- links to other dependencies -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="css/flexslider.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/8da83a5fd6.js" crossorigin="anonymous"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="tm-gray-bg">
-    <!-- Header -->
-    <div class="tm-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-                    <a href="index.html" class="tm-site-name">Hotels</a>
-                </div>
-                <div class="col-lg-6 col-md-8 col-sm-9">
-                    <div class="mobile-menu-icon">
-                        <i class="fa fa-bars"></i>
-                    </div>
-                    <nav class="tm-nav">
-                        <ul>
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="tours.html">Our Tours</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="jumbotron jumbotron-fluid">
-        <img src="img/img4.jpg
-        " alt="hotel" class="img-fluid image">
-        <div class="container">
-            <h1 class="display-4">Find Your Perfect Hotel</h1>
-            <form class="form-inline justify-content-center">
-                <input class="form-control mr-sm-2" type="search" placeholder="Enter a Destination" aria-label="Search">
-                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="#">Hotels</a>
+            <form class="d-flex search-form">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn search-btn btn-outline-success" type="submit"><i class="fa-regular fa-magnifying-glass"></i></button>
             </form>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Places</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign In</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
 
 
-    <!-- gray bg -->
-    <section class="container tm-home-section-1" id="more">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <!-- Nav tabs -->
-                <div class="tm-home-box-1">
-                    <ul class="nav nav-tabs tm-white-bg" role="tablist" id="hotelCarTabs">
-                        <li role="presentation" class="active">
-                            <a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab">Hotel</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#car" aria-controls="car" role="tab" data-toggle="tab">Car Rental</a>
-                        </li>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Dream Vacation</h1>
+                <p>Explore top-rated tours, hotels and restaurants around the world.</p>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="hero-navigation">
+                <a class="prev" href="#heroCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="next" href="#heroCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hotels Section -->
+    <section class="hotels-section">
+        <div class="container">
+            <h2>Our Top Hotels</h2>
+            <div id="hotelsCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#hotelsCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#hotelsCarousel" data-slide-to="1"></li>
+                    <li data-target="#hotelsCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src="images/img4.jpg" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 1</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="images/img5.jpg" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 2</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img class="card-img-top" src="images/img6.jpg" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 3</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src="images/img5.jpg" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 4</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" <img class="card-img-top" src="images/img5.jpg" alt="Hotel Image"> alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 5</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" <img class="card-img-top" src="images/img1.jpg" alt="Hotel Image">alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 6</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" <img class="card-img-top" src="images/img3.jpg" alt="Hotel Image"> alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 7</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" <img class="card-img-top" src="images/img2.jpg" alt="Hotel Image"> alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 8</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="images/img8.jpg" alt="Hotel Image">alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 8</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Festured hotel Hotels Section -->
+    <section class="hotels-section">
+        <div class="container">
+            <h2>Featured Hotels</h2>
+            <div id="hotelsCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#hotelsCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#hotelsCarousel" data-slide-to="1"></li>
+                    <li data-target="#hotelsCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src="images/img3.jpg" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 1</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img class="card-img-top" src="images/img4.jpg" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 2</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img class="card-img-top" src="images/img4.jpg" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 3</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 4</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 5</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 6</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 7</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 8</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="https://via.placeholder.com/350x200" alt="Hotel Image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hotel 8</h5>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <button class="btn btn-primary">Book Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark mt-5">
+        <div class="container py-3">
+            <div class="row">
+                <div class="col-12 col-md-4 text-center">
+                    <h5>Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active tm-white-bg" id="hotel">
-                            <div class="tm-search-box effect2">
-                                <form action="#" method="post" class="hotel-search-form">
-                                    <div class="tm-form-inner">
-                                        <div class="form-group">
-                                            <select class="form-control">
-							            	 	<option value="">-- Select Hotel -- </option>
-							            	 	<option value="shangrila">Shangri-La</option>
-												<option value="chatrium">Chatrium</option>
-												<option value="fourseasons">Four Seasons</option>
-												<option value="hilton">Hilton</option>
-											</select>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" placeholder="Check-in Date" />
-                                                <span class="input-group-addon">
-							                        <span class="fa fa-calendar"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class='input-group date' id='datetimepicker2'>
-                                                <input type='text' class="form-control" placeholder="Check-out Date" />
-                                                <span class="input-group-addon">
-							                        <span class="fa fa-calendar"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group margin-bottom-0">
-                                            <select class="form-control">
-							            	 	<option value="">-- Guests -- </option>
-							            	 	<option value="1">1</option>
-												<option value="2">2</option>
-												<option value="3">3</option>
-												<option value="4">4</option>
-												<option value="5p">5+</option>
-											</select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group tm-yellow-gradient-bg text-center">
-                                        <button type="submit" name="submit" class="tm-yellow-btn">Check Now</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade tm-white-bg" id="car">
-                            <div class="tm-search-box effect2">
-                                <form action="#" method="post" class="hotel-search-form">
-                                    <div class="tm-form-inner">
-                                        <div class="form-group">
-                                            <select class="form-control">
-							            	 	<option value="">-- Select Model -- </option>
-							            	 	<option value="shangrila">BMW</option>
-												<option value="chatrium">Mercedes-Benz</option>
-												<option value="fourseasons">Toyota</option>
-												<option value="hilton">Honda</option>
-											</select>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class='input-group date-time' id='datetimepicker3'>
-                                                <input type='text' class="form-control" placeholder="Pickup Date" />
-                                                <span class="input-group-addon">
-							                        <span class="fa fa-calendar"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class='input-group date-time' id='datetimepicker4'>
-                                                <input type='text' class="form-control" placeholder="Return Date" />
-                                                <span class="input-group-addon">
-							                        <span class="fa fa-calendar"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-							            	 	<option value="">-- Options -- </option>
-							            	 	<option value="">Child Seat</option>
-												<option value="">GPS Navigator</option>
-												<option value="">Insurance</option>
-											</select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group tm-yellow-gradient-bg text-center">
-                                        <button type="submit" name="submit" class="tm-yellow-btn">Check Now</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
-                    <img src="img/index-01.jpg" alt="image" class="img-responsive">
-                    <a href="#">
-                        <div class="tm-green-gradient-bg tm-city-price-container">
-                            <span>New York</span>
-                            <span>$6,600</span>
-                        </div>
-                    </a>
+                <div class="col-12 col-md-4 text-center">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li>123 Main Street</li>
+                        <li>City, State ZIP</li>
+                        <li>Phone: (123) 456-7890</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-right">
-                    <img src="img/index-02.jpg" alt="image" class="img-responsive">
-                    <a href="#">
-                        <div class="tm-red-gradient-bg tm-city-price-container">
-                            <span>Paris</span>
-                            <span>$4,200</span>
-                        </div>
-                    </a>
+                <div class="col-12 col-md-4 text-center">
+                    <h5>Connect</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="card">
-                    <img src="image1.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 1</h5>
-                        <p class="card-text">This is the first card.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="image2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 2</h5>
-                        <p class="card-text">This is the second card.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card">
-                    <img src="image3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card 3</h5>
-                        <p class="card-text">This is the third card.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-
-    <!-- white bg -->
-    <section class="tm-white-bg section-padding-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="tm-section-header section-margin-top">
-                    <div class="col-lg-4 col-md-3 col-sm-3">
-                        <hr>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <h2 class="tm-section-title">Popular Packages</h2>
-                    </div>
-                    <div class="col-lg-4 col-md-3 col-sm-3">
-                        <hr>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="tm-home-box-3">
-                        <div class="tm-home-box-3-img-container">
-                            <img src="img/index-07.jpg" alt="image" class="img-responsive">
-                        </div>
-                        <div class="tm-home-box-3-info">
-                            <p class="tm-home-box-3-description">Proin gravida nibhvell velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum</p>
-                            <div class="tm-home-box-2-container">
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-                                <a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description box-3">Travel</span></a>
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="tm-home-box-3">
-                        <div class="tm-home-box-3-img-container">
-                            <img src="img/index-08.jpg" alt="image" class="img-responsive">
-                        </div>
-                        <div class="tm-home-box-3-info">
-                            <p class="tm-home-box-3-description">Proin gravida nibhvell velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum</p>
-                            <div class="tm-home-box-2-container">
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-                                <a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description box-3">Travel</span></a>
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="tm-home-box-3">
-                        <div class="tm-home-box-3-img-container">
-                            <img src="img/index-09.jpg" alt="image" class="img-responsive">
-                        </div>
-                        <div class="tm-home-box-3-info">
-                            <p class="tm-home-box-3-description">Proin gravida nibhvell velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum</p>
-                            <div class="tm-home-box-2-container">
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-                                <a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description box-3">Travel</span></a>
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="tm-home-box-3">
-                        <div class="tm-home-box-3-img-container">
-                            <img src="img/index-10.jpg" alt="image" class="img-responsive">
-                        </div>
-                        <div class="tm-home-box-3-info">
-                            <p class="tm-home-box-3-description">Proin gravida nibhvell velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum</p>
-                            <div class="tm-home-box-2-container">
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-                                <a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description box-3">Travel</span></a>
-                                <a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="tm-black-bg">
-        <div class="container">
-            <div class="row">
-                <p class="tm-copyright-text">Copyright &copy; 2084 Your Company Name | Designed by templatemo</p>
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-    <!-- jQuery -->
-    <script type="text/javascript" src="js/moment.js"></script>
-    <!-- moment.js -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- bootstrap js -->
-    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
-    <!-- bootstrap date time picker js, http://eonasdan.github.io/bootstrap-datetimepicker/ -->
-    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-    <!--
-	<script src="js/froogaloop.js"></script>
-	<script src="js/jquery.fitvid.js"></script>
--->
-    <script type="text/javascript" src="js/templatemo-script.js"></script>
-    <!-- Templatemo Script -->
-    <script>
-        // HTML document is loaded. DOM is ready.
-        $(function() {
 
-            $('#hotelCarTabs a').click(function(e) {
-                e.preventDefault()
-                $(this).tab('show')
-            })
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/8da83a5fd6.js" crossorigin="anonymous"></script>
 
-            $('.date').datetimepicker({
-                format: 'MM/DD/YYYY'
-            });
-            $('.date-time').datetimepicker();
-
-            // https://css-tricks.com/snippets/jquery/smooth-scrolling/
-            $('a[href*=#]:not([href=#])').click(function() {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        $('html,body').animate({
-                            scrollTop: target.offset().top
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-        });
-
-        // Load Flexslider when everything is loaded.
-        $(document).ready(function() {
-            $(".flexslider").flexslider({
-                animation: "slide",
-                directionNav: false,
-                controlNav: true,
-                slideshowSpeed: 3000,
-                animationSpeed: 600,
-                itemWidth: 300,
-                itemMargin: 20,
-                minItems: 1,
-                maxItems: 3,
-                move: 1,
-                prevText: "Previous",
-                newText: "Next"
-            })
-        })
-    </script>
 </body>
 
 </html>

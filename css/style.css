@@ -1,0 +1,277 @@
+/* Navbar styles */
+
+.navbar {
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('../images/img6.jpg');
+    background-size: cover;
+    position: relative;
+    color: #868e96;
+    z-index: 9999;
+}
+
+.navbar-brand {
+    color: #868e96;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+    color: #868e96;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: none;
+    color: #868e96;
+    border-radius: 0.5rem;
+}
+
+
+/* Active nav link styles */
+
+.navbar-nav .active>.nav-link {
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.navbar-toggler {
+    color: #fff;
+    border-color: #fff;
+}
+
+.navbar-toggler:hover,
+.navbar-toggler:focus {
+    color: #fff;
+    border-color: #28a745;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="%23fff" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.navbar.navbar-light.navbar-expand-lg.fixed-top.py-3 {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.navbar-light.navbar-expand-lg.fixed-top.py-3.navbar-bg {
+    background-color: #868e96;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+
+/* Masthead section */
+
+.masthead {
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('../images/img6.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.masthead h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.masthead hr {
+    border-color: #f1f3f5;
+    border-width: 2px;
+    max-width: 100px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.masthead p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2rem;
+}
+
+.search-form {
+    margin-top: 2rem;
+}
+
+.search-form input[type="search"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 0.5rem;
+    border-radius: 0;
+    border: none;
+    background-color: #f1f3f5;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-form button[type="submit"] {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0;
+    background-color: #f1f3f5;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        height: 100vh;
+        min-height: 40rem;
+        padding-top: 4.5rem;
+        padding-bottom: 0;
+    }
+    header.masthead p {
+        font-size: 1.15rem;
+    }
+    header.masthead h1,
+    header.masthead .h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    header.masthead h1,
+    header.masthead .h1 {
+        font-size: 3.5rem;
+    }
+}
+
+
+/* top hotels */
+
+.top-hotels {
+    margin-bottom: 64px;
+}
+
+.card {
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    height: 15rem;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer .btn-group {
+    display: flex;
+}
+
+.card-footer .btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-footer .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.card-footer .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.card-footer .btn-outline-dark {
+    background-color: transparent;
+    border-color: #343a40;
+    color: #343a40;
+}
+
+.card-footer .btn-outline-dark:hover {
+    background-color: #343a40;
+    border-color: #343a40;
+    color: #fff;
+}
+
+.card-footer .features {
+    display: flex;
+    align-items: center;
+}
+
+.card-footer .features i {
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
+
+.card.animated {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-out;
+}
+
+.card.animated.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 30px 0;
+}
+
+footer h5 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+footer a:hover {
+    color: #007bff;
+}

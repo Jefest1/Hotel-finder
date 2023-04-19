@@ -1,26 +1,65 @@
-const navbarToggler = document.querySelector('.navbar-toggler');
-const navbarCollapse = document.querySelector('.navbar-collapse');
+window.addEventListener('DOMContentLoaded', event => {
 
-navbarToggler.addEventListener('click', () => {
-    navbarCollapse.classList.toggle('show');
+    // Navbar color change function
+    var navbarColorChange = function() {
+        const navbarCollapsible = document.body.querySelector('#mainNav');
+        if (!navbarCollapsible) {
+            return;
+        }
+        if (window.scrollY === 0) {
+            navbarCollapsible.classList.remove('navbar-bg')
+        } else {
+            navbarCollapsible.classList.add('navbar-bg')
+        }
+    };
+
+    // Change navbar color on page load
+    navbarColorChange();
+
+    // Change navbar color when page is scrolled
+    document.addEventListener('scroll', navbarColorChange);
+
+    // Activate Bootstrap scrollspy on the main nav element
+    const mainNav = document.body.querySelector('#mainNav');
+    if (mainNav) {
+        new bootstrap.ScrollSpy(document.body, {
+            target: '#mainNav',
+            rootMargin: '0px 0px -40%',
+        });
+    };
+
+    // Collapse responsive navbar when toggler is visible
+    const navbarToggler = document.body.querySelector('.navbar-toggler');
+    const responsiveNavItems = [].slice.call(
+        document.querySelectorAll('#navbarResponsive .nav-link')
+    );
+    responsiveNavItems.map(function(responsiveNavItem) {
+        responsiveNavItem.addEventListener('click', () => {
+            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                navbarToggler.click();
+            }
+        });
+    });
+
+    // Activate SimpleLightbox plugin for portfolio items
+    new SimpleLightbox({
+        elements: '#portfolio a.portfolio-box'
+    });
+
 });
 
-// Activate the carousel
-$('#hotelsCarousel').carousel();
-
-// Enable carousel controls
-$('.carousel-control-prev').click(function() {
-    $('#hotelsCarousel').carousel('prev');
-});
-
-$('.carousel-control-next').click(function() {
-    $('#hotelsCarousel').carousel('next');
-});
 
 
-// Add active class to the navigation button on slide change
-$('#heroCarousel').on('slide.bs.carousel', function(e) {
-    var active = e.relatedTarget.getAttribute('data-slide-to');
-    $('.hero-navigation a').removeClass('active');
-    $('.hero-navigation a[data-slide-to="' + active + '"]').addClass('active');
+// animations
+$(window).scroll(function() {
+    $('.card.animated').each(function() {
+        var offset = $(this).offset().top;
+        var height = $(this).outerHeight();
+        var scrollTop = $(window).scrollTop();
+        var windowHeight = $(window).height();
+
+        if (scrollTop + windowHeight > offset && scrollTop < offset + height) {
+            $(this).addClass('visible');
+        }
+    });
 });

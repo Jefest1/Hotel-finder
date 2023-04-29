@@ -107,7 +107,35 @@
     margin-bottom: 2rem;
 }
 
-. .search-form {
+.hotelshead {
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url('../images/img6.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: changeBackground 25s infinite;
+}
+
+@keyframes changeBackground {
+    0% {
+        background-image: url("../images/kem3.jpeg");
+    }
+    25% {
+        background-image: url("../images/ali2.jpg");
+    }
+    50% {
+        background-image: url("../images/gy1.jpg");
+    }
+    75% {
+        background-image: url("../images/ac3.jpg");
+    }
+    100% {
+        background-image: url("../images/as3.jpg");
+    }
+}
+
+.search-form {
     margin-top: 2rem;
 }
 
@@ -152,6 +180,18 @@
 
 
 /* top hotels */
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+@media (min-width: 768px) {
+    .card img {
+        height: 11em;
+    }
+}
 
 .top-hotels {
     margin-bottom: 64px;

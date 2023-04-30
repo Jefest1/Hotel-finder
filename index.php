@@ -61,13 +61,13 @@
                     <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 mb-5">Explore most rated Hotels in the world</p>
                         <div class="s004">
-                            <form>
+                            <form method="POST" action="search.php">
                                 <fieldset>
                                     <div class="inner-form">
                                         <div class="input-field">
                                             <input class="form-control" id="choices-text-preset-values" type="text"
-                                                placeholder="Type to search..." />
-                                            <button class="btn-search" type="button">
+                                                placeholder="Type to search..." name="search_query" />
+                                            <button class="btn-search" type="submit">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24">
                                                     <path
@@ -564,9 +564,9 @@
     <script src="script.js "></script>
     <script src="extention/choices.js "></script>
     <script>
-    var textPresetVal = new Choices('#choices-text-preset-values', {
-        removeItemButton: true,
-    });
+        var textPresetVal = new Choices('#choices-text-preset-values', {
+            removeItemButton: true,
+        });
     </script>
 </body>
 

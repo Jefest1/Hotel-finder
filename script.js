@@ -63,3 +63,25 @@ $(window).scroll(function() {
         }
     });
 });
+
+
+const btn = document.querySelector('.show-modal');
+const modal = document.querySelector('.modal');
+const modalCollapse = document.querySelector('.modal-collapse');
+const overlay = document.querySelector('.overlay');
+
+//function to display modal
+function showModal() {
+    overlay.classList.remove('modal-hidden');
+    modal.classList.remove('modal-hidden');
+}
+
+//function to collapse modal
+function collapseModal() {
+    overlay.classList.add('modal-hidden');
+    modal.classList.add('modal-hidden');
+}
+
+// Events for modal
+btn.addEventListener('click', showModal);
+modalCollapse.addEventListener('click', collapseModal)
